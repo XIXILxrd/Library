@@ -14,9 +14,11 @@ namespace Library
         {
             Hall pushkinTales = new Hall(new PushkinLiteratureFactory());
 
-            Hall dostoevskyNovels = new Hall(new DostoevskyLiteratureFactory());
+            //Hall dostoevskyNovels = new Hall(new DostoevskyLiteratureFactory());
 
-            Console.WriteLine(dostoevskyNovels.ShowAvailability());
+            //Console.WriteLine(dostoevskyNovels.ShowAvailability());
+
+            Console.WriteLine(pushkinTales.ShowAuthors());
         }
     }
 }

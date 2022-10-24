@@ -87,6 +87,16 @@ namespace Library.Collection
             return true;
         }
 
+        internal int CompareTo(LinkList<Genre> genre)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal int CompareTo(LinkList<Author> author)
+        {
+            throw new NotImplementedException();
+        }
+
         private bool RemoveSpecify(T item)
         {
             if (head is null)
@@ -209,5 +219,6 @@ namespace Library.Collection
         {
             return new ListEnumerator<T>(this);
         }
+
     }
 }

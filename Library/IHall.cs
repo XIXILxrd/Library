@@ -11,7 +11,7 @@ namespace Library
     {
         public LinkList<Author> ShowAuthors();
 
-        public string ShowAvailability();
+        public LinkList<Literature> ShowAvailability();
 
         public LinkList<Genre> ShowGenres();
     }

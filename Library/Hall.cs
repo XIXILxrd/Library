@@ -25,16 +25,9 @@ namespace Library
             return author;
         }
 
-        public string ShowAvailability()
+        public LinkList<Literature> ShowAvailability()
         {
-            StringBuilder stringBuilder = new StringBuilder();
-            
-            foreach(var item in literatures)
-            {
-                stringBuilder.Append($"{item.Title} - {item.CopiesAmount}\n");
-            }
-
-            return stringBuilder.ToString();
+            return literatures;
         }
 
         public LinkList<Genre> ShowGenres()
