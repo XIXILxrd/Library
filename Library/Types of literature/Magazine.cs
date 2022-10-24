@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Library.Collection;
 
 namespace Library
 {
@@ -10,15 +11,10 @@ namespace Library
     {
         public string PublicationDate { get; }
 
-        public Magazine(string title, Author author, Genre genre,  string publisher, int copiesAmount, string publicationDate)
+        public Magazine(string title, LinkList<Author> author, LinkList<Genre> genre,  string publisher, int copiesAmount, string publicationDate)
             : base(title, author, genre, publisher, copiesAmount)
         {
             PublicationDate = publicationDate;
-        }
-
-        public override string Rent(int amount)
-        {
-            return CopiesAmount - amount > 0 ? $"{amount} magazines rented, {CopiesAmount - amount} left." : $"Not enough magazines.";
         }
     }
 }

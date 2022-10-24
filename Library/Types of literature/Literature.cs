@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Library.Collection;
 
 namespace Library
 {
     abstract class Literature
     {
         public  string Title { get; }
-        public Author Author { get; }
+        public LinkList<Author> Author { get; }
         public string Publisher { get; }
-        public Genre Genre { get; }
-
+        public LinkList<Genre> Genre { get; }
         public int CopiesAmount { get; }
 
-        public Literature(string title, Author author, Genre genre, string publisher, int copiesAmount)
+        public Literature(string title, LinkList<Author> author, LinkList<Genre> genre, string publisher, int copiesAmount)
         {
             Title = title;
             Author = author;
@@ -24,6 +24,9 @@ namespace Library
             CopiesAmount = copiesAmount;
         }
 
-        public abstract string Rent(int amount);
+        public override string ToString()
+        {
+            return Title;
+        }
     }
 }

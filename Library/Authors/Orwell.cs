@@ -11,9 +11,5 @@ namespace Library.Authors
         public Orwell(string initials, string dateOfBirth)
             :base(initials, dateOfBirth)
         { }
-        public override string AboutAuthor()
-        {
-            return "Orwell was an English novelist, essayist, journalist, and critic.";
-        }
     }
 }

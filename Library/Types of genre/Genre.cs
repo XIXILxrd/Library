@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class Genre
+    abstract class Genre
     {
         public string Description { get; }
 

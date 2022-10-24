@@ -11,10 +11,5 @@ namespace Library.Authors
         public Dostoevsky(string initials, string dateOfBirth)
             : base(initials, dateOfBirth)
         { }
-
-        public override string AboutAuthor()
-        {
-            return "Dostoyevsky was a Russian novelist, short story writer, essayist and journalist.";
-        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Library.Collection;
 
 namespace Library
 {
@@ -10,15 +11,10 @@ namespace Library
     {
         public int PagesAmount { get; }
 
-        public Book(string title, Author author, Genre genre, string publisher, int copiesAmount, int pagesAmount)
+        public Book(string title, LinkList<Author> author, LinkList<Genre> genre, string publisher, int copiesAmount, int pagesAmount)
             : base(title, author, genre, publisher, copiesAmount)
         {
             PagesAmount = pagesAmount;
-        }
-
-        public override string Rent(int amount)
-        {
-            return CopiesAmount - amount > 0 ? $"{amount} books rented, {CopiesAmount - amount} left." : $"Not enough books.";
         }
     }
 }

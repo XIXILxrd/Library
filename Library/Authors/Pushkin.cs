@@ -11,10 +11,5 @@ namespace Library.Authors
         public Pushkin(string initials, string dateOfBirth)
             : base(initials, dateOfBirth)
         { }
-
-        public override string AboutAuthor()
-        {
-            return "Pushkin was a Russian poet, playwright, and novelist.";
-        }
     }
 }

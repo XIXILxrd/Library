@@ -16,7 +16,5 @@ namespace Library
             Initials = initials;
             DateOfBirth = dateOfBirth;
         }
-
-        public abstract string AboutAuthor();
     }
 }

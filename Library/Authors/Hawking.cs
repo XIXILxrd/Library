@@ -11,10 +11,5 @@ namespace Library.Authors
         public Hawking(string initials, string dateOfBirth)
             : base(initials, dateOfBirth)
         { }
-
-        public override string AboutAuthor()
-        {
-            return "Hawking was an English theoretical physicist, cosmologist.";
-        }
     }
 }
