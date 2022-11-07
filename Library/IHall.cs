@@ -9,10 +9,10 @@ namespace Library
 {
     internal interface IHall
     {
-        public LinkList<Author> ShowAuthors();
+        public Author ShowAuthors();
 
         public LinkList<Literature> ShowAvailability();
 
-        public LinkList<Genre> ShowGenres();
+        public Genre ShowGenres();
     }
 }

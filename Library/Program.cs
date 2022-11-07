@@ -1,6 +1,8 @@
-﻿using Library.Collection;
+﻿using Library.Authors;
+using Library.Collection;
 using Library.Factories;
 using Library.Halls;
+using Library.Types_of_genre;
 using System;
 using System.Linq;
 using System.Text;
@@ -12,13 +14,19 @@ namespace Library
     {
         static void Main(string[] agrs)
         {
-            Hall pushkinTales = new Hall(new PushkinLiteratureFactory());
+            Hall dostoevskyHall = new Hall(new DostoevskyLiteratureFactory());
 
-            //Hall dostoevskyNovels = new Hall(new DostoevskyLiteratureFactory());
+            LinkList<Literature> literatures = dostoevskyHall.ShowAvailability();
 
-            //Console.WriteLine(dostoevskyNovels.ShowAvailability());
+            literatures.Display();
 
-            Console.WriteLine(pushkinTales.ShowAuthors());
+
+            literatures.ChooseTypeOfSort();
+
+            Console.WriteLine("----------------------------------------");
+
+            dostoevskyHall.ShowAvailability().Sort(dostoevskyHall.ShowAvailability()).Display();
+
         }
     }
 }

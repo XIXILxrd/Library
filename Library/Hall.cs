@@ -9,8 +9,8 @@ namespace Library
 {
     internal class Hall : IHall
     {
-        private LinkList<Author> author;
-        private LinkList<Genre> genre;
+        private Author author;
+        private Genre genre;
         private LinkList<Literature> literatures;
 
         public Hall(LiteratureFactory factory)
@@ -20,7 +20,7 @@ namespace Library
             literatures = factory.CreateLiterature();
         }
 
-        public LinkList<Author> ShowAuthors()
+        public Author ShowAuthors()
         {
             return author;
         }
@@ -30,7 +30,7 @@ namespace Library
             return literatures;
         }
 
-        public LinkList<Genre> ShowGenres()
+        public Genre ShowGenres()
         {
             return genre;
         }

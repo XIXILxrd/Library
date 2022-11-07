@@ -15,31 +15,44 @@ namespace Library.Halls
         {
             LinkList<Literature> literatures = new LinkList<Literature>();
 
-            literatures.Add(new Book(title: "Tales",
+            literatures.Add(new Book(title: "3",
                                     author: CreateAuthor(),
                                     genre: CreateGenre(),
-                                    publisher: "Moscow",
+                                    publisher: "AMoscow",
                                     copiesAmount: 110,
                                     pagesAmount: 1500));
+
+            literatures.Add(new Book(title: "2",
+                                    author: CreateAuthor(),
+                                    genre: CreateGenre(),
+                                    publisher: "BMoscow",
+                                    copiesAmount: 110,
+                                    pagesAmount: 1500));
+
+            literatures.Add(new Book(title: "1",
+                                   author: CreateAuthor(),
+                                   genre: CreateGenre(),
+                                   publisher: "BMoscow",
+                                   copiesAmount: 110,
+                                   pagesAmount: 1500));
+
+            literatures.Add(new Book(title: "4",
+                                   author: CreateAuthor(),
+                                   genre: CreateGenre(),
+                                   publisher: "BMoscow",
+                                   copiesAmount: 110,
+                                   pagesAmount: 1500));
             return literatures;
         }
 
-        public override LinkList<Author> CreateAuthor()
+        public override Author CreateAuthor()
         {
-            LinkList<Author> authors = new LinkList<Author>();
-
-            authors.Add(new Pushkin("Pushkin A. S", "6.06.1799"));
-
-            return authors;
+            return new Pushkin("Pushkin A. S", "6.06.1799");
         }
 
-        public override LinkList<Genre> CreateGenre()
+        public override Genre CreateGenre()
         {
-            LinkList<Genre> genres = new LinkList<Genre>();
-
-            genres.Add(new Tale("Short funny story."));
-
-            return genres;
+            return new Tale("Short funny story.");
         }
     }
 }

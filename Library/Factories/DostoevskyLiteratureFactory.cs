@@ -46,22 +46,14 @@ namespace Library.Factories
             return literatures;
         }
 
-        public override LinkList<Author> CreateAuthor()
+        public override Author CreateAuthor()
         {
-            LinkList<Author> authors = new LinkList<Author>();
-
-            authors.Add(new Dostoevsky("Dostoevsky F. M", "11.10.1821"));
-
-            return authors;
+            return new Dostoevsky("Dostoevsky F. M", "11.10.1821");
         }
 
-        public override LinkList<Genre> CreateGenre()
+        public override Genre CreateGenre()
         {
-            LinkList<Genre> genres = new LinkList<Genre>();
-
-            genres.Add(new Novel("Long story."));
-
-            return genres;
+            return new Novel("Long story.");
         }
     }
 }

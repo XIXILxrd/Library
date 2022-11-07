@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    abstract class Author : IComparable<Author>
+    abstract class Author
     {
         public string Initials { get; }
         public string DateOfBirth { get; }
@@ -17,25 +17,9 @@ namespace Library
             DateOfBirth = dateOfBirth;
         }
 
-        public int CompareTo(Author? other)
+        public override string ToString()
         {
-            if (other is null)
-            {
-                throw new ArgumentException("Object is not a Author");
-            }
-
-            if (this.Initials.CompareTo(other.Initials) != 0)
-            {
-                return this.Initials.CompareTo(other.Initials);
-            }
-            else if (this.DateOfBirth.CompareTo(other.DateOfBirth) != 0)
-            {
-                return this.DateOfBirth.CompareTo(other.DateOfBirth);
-            }
-            else
-            {
-                return 0;
-            }
+            return Initials;
         }
     }
 }

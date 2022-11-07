@@ -11,7 +11,7 @@ namespace Library
     {
         public string PublicationDate { get; }
 
-        public Magazine(string title, LinkList<Author> author, LinkList<Genre> genre,  string publisher, int copiesAmount, string publicationDate)
+        public Magazine(string title, Author author, Genre genre,  string publisher, int copiesAmount, string publicationDate)
             : base(title, author, genre, publisher, copiesAmount)
         {
             PublicationDate = publicationDate;

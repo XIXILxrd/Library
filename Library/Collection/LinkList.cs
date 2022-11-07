@@ -1,18 +1,36 @@
 ﻿using System.Collections;
-using Library.Collection;
-
 
 namespace Library.Collection
 {
+    delegate LinkList<T> SortType<T>(Func<T, T, int> compare);
+
     class LinkList<T> : ICollection<T>
     {
         private Node<T>? head;
         private Node<T>? tail;
         private int length;
 
+        SortType<T>? type;
+
         public Node<T>? GetHead()
         {
             return head;
+        }
+
+        public LinkList<T> GetLinkList()
+        {
+            LinkList<T> list = new LinkList<T>();
+
+            Node<T>? current = head;
+
+            while (current != null)
+            {
+                list.Add(current.value);
+
+                current = current.next;
+            }
+
+            return list;
         }
 
         public bool IsReadOnly
@@ -85,16 +103,6 @@ namespace Library.Collection
             length--;
 
             return true;
-        }
-
-        internal int CompareTo(LinkList<Genre> genre)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal int CompareTo(LinkList<Author> author)
-        {
-            throw new NotImplementedException();
         }
 
         private bool RemoveSpecify(T item)
@@ -220,5 +228,107 @@ namespace Library.Collection
             return new ListEnumerator<T>(this);
         }
 
+        public LinkList<T>? Sort()
+        {
+            type = BubbleSort;
+
+            return type?.Invoke(CompareByName); 
+        }
+
+        private LinkList<T> BubbleSort(Func<T, T, int> compare)
+        {
+            LinkList<T>? list = GetLinkList();
+
+            Console.WriteLine("\nUsing BubbleSort\n");
+
+            T[] tempArray = new T[list.Count];
+            list.CopyTo(tempArray, 0);
+
+            list.Clear();
+
+            T temp;
+
+            for (int i = 0; i < tempArray.Length; i++)
+            {
+                for (int j = 0; j < tempArray.Length - i - 1; j++)
+                {
+                    if (compare(tempArray[j], tempArray[j + 1]) > 0)
+                    {
+                        temp = tempArray[j];
+                        tempArray[j] = tempArray[j + 1];
+                        tempArray[j + 1] = temp;
+                    }
+                }
+            }
+
+            LinkList<T> newList = new LinkList<T>();
+
+            foreach(var item in tempArray)
+            {
+                newList.Add(item);
+            }
+
+            return newList;
+        }
+
+        private LinkList<T> DefaultSort(Func<T, T, int> compare)
+        {
+            LinkList<T>? list = GetLinkList();
+
+            Console.WriteLine("\nUsing DefaultSort\n");
+
+            T[] tempArray = new T[list.Count];
+
+            list.CopyTo(tempArray, 0);
+
+            list.Clear();
+
+            Array.Sort(tempArray, (x, y) => compare(x, y));
+
+            LinkList<T> newList = new LinkList<T>();
+
+            foreach (var item in tempArray)
+            {
+                newList.Add(item);
+            }
+
+            return newList;
+        }
+
+        private int CompareByName(T a, T b)
+        {
+            if (a is Literature && b is Literature)
+            {
+                return ((a as Literature).Title.CompareTo((b as Literature).Title));
+            }
+            else if (a is Author && b is Author)
+            {
+                return ((a as Author).Initials.CompareTo((b as Author).Initials));
+            }
+            else
+            {
+                throw new ArgumentException();
+            }
+        }
+
+        private int CompareLitByPublisher(T a, T b)
+        {
+            if (!(a is Literature) || !(b is Literature))
+            {
+                throw new ArgumentException();
+            }
+
+            return ((a as Literature).Publisher).CompareTo((b as Literature).Publisher);
+        }
+
+        private int CompareLitByAmount(T a, T b)
+        {
+            if (!(a is Literature) || !(b is Literature))
+            {
+                throw new ArgumentException();
+            }
+
+            return ((a as Literature).CopiesAmount).CompareTo((b as Literature).CopiesAmount);
+        }
     }
 }

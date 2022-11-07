@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Diagnostics.SymbolStore;
+using System.Text.RegularExpressions;
 
 namespace Library.Collection
 {
@@ -6,6 +8,7 @@ namespace Library.Collection
     {
         private LinkList<T> collection;
         private Node<T> currentNode;
+        private bool onFirst = true;
 
         public ListEnumerator(LinkList<T> list)
         {
@@ -24,14 +27,16 @@ namespace Library.Collection
 
         public bool MoveNext()
         {
-            currentNode = currentNode.next;
-
-            if (currentNode != null)
+            if (onFirst)
             {
-                return true;
+                onFirst = false;
             }
-            
-            return false;
+            else if (currentNode != null)
+            {
+                currentNode = currentNode.next;
+            }
+
+            return currentNode != null;
         }
 
         public void Reset()
