@@ -230,7 +230,13 @@ namespace Library.Collection
 
         public LinkList<T>? Sort()
         {
-            type = BubbleSort;
+            if (head is null)
+            {
+                throw new NullReferenceException();
+            }
+
+            type = DefaultSort;
+
 
             return type?.Invoke(CompareByName); 
         }
@@ -240,6 +246,7 @@ namespace Library.Collection
             LinkList<T>? list = GetLinkList();
 
             Console.WriteLine("\nUsing BubbleSort\n");
+
 
             T[] tempArray = new T[list.Count];
             list.CopyTo(tempArray, 0);

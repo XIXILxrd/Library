@@ -20,12 +20,11 @@ namespace Library
 
             literatures.Display();
 
-
-            literatures.ChooseTypeOfSort();
-
             Console.WriteLine("----------------------------------------");
 
-            dostoevskyHall.ShowAvailability().Sort(dostoevskyHall.ShowAvailability()).Display();
+            literatures = literatures.Sort();
+
+            literatures.Display();
 
         }
     }
