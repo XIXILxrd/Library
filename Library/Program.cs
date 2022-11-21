@@ -3,28 +3,40 @@ using Library.Collection;
 using Library.Factories;
 using Library.Halls;
 using Library.Types_of_genre;
-using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Library.Logger;
 
 namespace Library
 {
-    class Program
+    public class Program
     {
         static void Main(string[] agrs)
         {
-            Hall dostoevskyHall = new Hall(new DostoevskyLiteratureFactory());
+            Logging<Literature> logging = new Logging<Literature>();
+            PrintLog print = new PrintLog();
 
-            LinkList<Literature> literatures = dostoevskyHall.ShowAvailability();
+            logging.Display += print.ToConsole;
 
-            literatures.Display();
+            LinkList<Literature> list = new LinkList<Literature>();
 
-            Console.WriteLine("----------------------------------------");
+            Book ss = new Book(title: "1",
+                                    author: new Dostoevsky("1", "1"),
+                                    genre: new Novel("ss"),
+                                    publisher: "SPB",
+                                    copiesAmount: 130,
+                                    pagesAmount: 500);
+            Book ww = new Book(title: "2",
+                                    author: new Dostoevsky("1", "1"),
+                                    genre: new Novel("ss"),
+                                    publisher: "SPB",
+                                    copiesAmount: 130,
+                                    pagesAmount: 500);
 
-            literatures = literatures.Sort();
+            list.Add(ss);
+            list.Add(ww);
 
-            literatures.Display();
+            list.Contains(ss);
+
+            list.Display();
 
         }
     }

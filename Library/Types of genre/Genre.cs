@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    abstract class Genre
+    [Serializable]
+
+    public abstract class Genre
     {
         public string Description { get; }
 

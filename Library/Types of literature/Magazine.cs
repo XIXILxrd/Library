@@ -7,7 +7,7 @@ using Library.Collection;
 
 namespace Library
 {
-    class Magazine : Literature
+    public class Magazine : Literature
     {
         public string PublicationDate { get; }
 

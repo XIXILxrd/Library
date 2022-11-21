@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Library.Authors;
-using Library.Collection;
-using Library.Types_of_genre;
-
-namespace Library
+﻿namespace Library
 {
-    class Book : Literature
+    public class Book : Literature
     {
         public int PagesAmount { get; }
 

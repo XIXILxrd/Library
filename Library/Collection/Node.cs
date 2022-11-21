@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Library.Collection
 {
-    internal class Node<T>
+    [Serializable]
+
+    public class Node<T>
     {
         public Node<T>? next;
         public T value;

@@ -1,0 +1,85 @@
+{
+  "$type": "Library.Collection.LinkList`1[[Library.Literature, Library]], Library",
+  "$values": [
+    {
+      "$type": "Library.Book, Library",
+      "PagesAmount": 1,
+      "Title": "first",
+      "Author": {
+        "$type": "Library.Authors.Dostoevsky, Library",
+        "Initials": "1",
+        "DateOfBirth": "2021"
+      },
+      "Publisher": "Test1",
+      "Genre": {
+        "$type": "Library.Types_of_genre.Novel, Library",
+        "Description": "11"
+      },
+      "CopiesAmount": 100
+    },
+    {
+      "$type": "Library.Book, Library",
+      "PagesAmount": 2,
+      "Title": "second",
+      "Author": {
+        "$type": "Library.Authors.Dostoevsky, Library",
+        "Initials": "2",
+        "DateOfBirth": "2022"
+      },
+      "Publisher": "Test1",
+      "Genre": {
+        "$type": "Library.Types_of_genre.Novel, Library",
+        "Description": "22"
+      },
+      "CopiesAmount": 200
+    },
+    {
+      "$type": "Library.Book, Library",
+      "PagesAmount": 3,
+      "Title": "third",
+      "Author": {
+        "$type": "Library.Authors.Dostoevsky, Library",
+        "Initials": "3",
+        "DateOfBirth": "2023"
+      },
+      "Publisher": "Test1",
+      "Genre": {
+        "$type": "Library.Types_of_genre.Novel, Library",
+        "Description": "33"
+      },
+      "CopiesAmount": 300
+    },
+    {
+      "$type": "Library.Book, Library",
+      "PagesAmount": 4,
+      "Title": "fourth",
+      "Author": {
+        "$type": "Library.Authors.Dostoevsky, Library",
+        "Initials": "4",
+        "DateOfBirth": "2024"
+      },
+      "Publisher": "Test1",
+      "Genre": {
+        "$type": "Library.Types_of_genre.Novel, Library",
+        "Description": "44"
+      },
+      "CopiesAmount": 400
+    },
+    {
+      "$type": "Library.Book, Library",
+      "PagesAmount": 5,
+      "Title": "fifth",
+      "Author": {
+        "$type": "Library.Authors.Dostoevsky, Library",
+        "Initials": "5",
+        "DateOfBirth": "2025"
+      },
+      "Publisher": "Test1",
+      "Genre": {
+        "$type": "Library.Types_of_genre.Novel, Library",
+        "Description": "55"
+      },
+      "CopiesAmount": 500
+    }
+  ]
+}

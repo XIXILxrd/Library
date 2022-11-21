@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Library.Types_of_genre
 {
-    internal class Dystopia : Genre
+    [Serializable]
+
+    public class Dystopia : Genre
     {
         public Dystopia(string description)
             : base(description)

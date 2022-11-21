@@ -7,7 +7,7 @@ using Library.Collection;
 
 namespace Library
 {
-    internal interface IHall
+    public interface IHall
     {
         public Author ShowAuthors();
 

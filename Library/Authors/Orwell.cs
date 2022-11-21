@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Library.Authors
 {
-    internal class Orwell: Author
+    [Serializable]
+
+    public class Orwell: Author
     {
         public Orwell(string initials, string dateOfBirth)
             :base(initials, dateOfBirth)

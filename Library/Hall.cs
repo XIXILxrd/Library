@@ -7,7 +7,9 @@ using Library.Collection;
 
 namespace Library
 {
-    internal class Hall : IHall
+    [Serializable]
+
+    public class Hall : IHall
     {
         private Author author;
         private Genre genre;

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    abstract class Author
+    [Serializable]
+    public abstract class Author
     {
         public string Initials { get; }
         public string DateOfBirth { get; }

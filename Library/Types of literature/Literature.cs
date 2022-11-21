@@ -1,8 +1,6 @@
-﻿using Library.Collection;
-
-namespace Library
+﻿namespace Library
 {
-    abstract class Literature
+    public abstract class Literature
     {
         public  string Title { get; }
         public Author Author { get; }

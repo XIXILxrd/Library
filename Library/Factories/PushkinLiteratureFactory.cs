@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 
 namespace Library.Halls
 {
-    internal class PushkinLiteratureFactory : LiteratureFactory
+    [Serializable]
+
+    public class PushkinLiteratureFactory : LiteratureFactory
     {
         public override LinkList<Literature> CreateLiterature()
         {

@@ -1,13 +1,13 @@
 ﻿using System.Collections;
-using System.Diagnostics.SymbolStore;
-using System.Text.RegularExpressions;
 
 namespace Library.Collection
 {
-    internal class ListEnumerator<T> : IEnumerator<T>
+    [Serializable]
+
+    public class ListEnumerator<T> : IEnumerator<T>
     {
         private LinkList<T> collection;
-        private Node<T> currentNode;
+        private Node<T>? currentNode;
         private bool onFirst = true;
 
         public ListEnumerator(LinkList<T> list)
@@ -16,10 +16,7 @@ namespace Library.Collection
             currentNode = collection.GetHead();
         }
 
-        public Node<T> Current
-        {
-            get { return currentNode; }
-        }
+        public Node<T>? Current => currentNode;
 
         object IEnumerator.Current => Current.value;
 

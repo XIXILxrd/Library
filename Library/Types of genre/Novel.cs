@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace Library.Types_of_genre
 {
-    internal class Novel : Genre
+    [Serializable]
+
+    public class Novel : Genre
     {
         public Novel(string description)
             : base(description) 

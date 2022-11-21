@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Library.Authors
 {
-    internal class Hawking: Author
+    [Serializable]
+
+    public class Hawking: Author
     {
         public Hawking(string initials, string dateOfBirth)
             : base(initials, dateOfBirth)

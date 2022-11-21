@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 
 namespace Library.Factories
 {
-    internal class DostoevskyLiteratureFactory : LiteratureFactory
+    [Serializable]
+
+    public class DostoevskyLiteratureFactory : LiteratureFactory
     {
         public override LinkList<Literature> CreateLiterature()
         {

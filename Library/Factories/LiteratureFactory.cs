@@ -2,7 +2,9 @@
 
 namespace Library
 {
-    abstract class LiteratureFactory
+    [Serializable]
+
+    public abstract class LiteratureFactory
     {
         public abstract LinkList<Literature> CreateLiterature();
         public abstract Author CreateAuthor();
